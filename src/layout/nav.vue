@@ -2,7 +2,7 @@
     <el-row class="tac">
         <el-col :span="24">
             <el-menu
-                default-active="1-1"
+                :default-active="active"
                 class="el-menu-vertical-demo"
                 @open="handleOpen"
                 @close="handleClose"
@@ -15,7 +15,9 @@
                         <i class="el-icon-location"></i>
                         <span>{{item.title}}</span>
                     </template>
-                    <el-menu-item v-for="(subItem,subIndex) of item.children" :key="subIndex" :index="subItem.index">{{subItem.title}}</el-menu-item>
+                    <el-menu-item v-for="(subItem,subIndex) of item.children" :key="subIndex" :index="subItem.index">
+                        <router-link tag="li" :to="subItem.path">{{subItem.title}}</router-link>
+                    </el-menu-item>
                 </el-submenu>
 
             </el-menu>
@@ -29,6 +31,7 @@
         data(){
             return {
                 navList,
+                active: "/app/productManage"
             }
         },
         methods: {
@@ -38,9 +41,11 @@
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
             }
+        },
+        mounted(){
+            const active = this.$route.path;
+            this.active = active;
         }
-
-        
     })
 </script>
 

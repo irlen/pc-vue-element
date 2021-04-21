@@ -4,6 +4,10 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import 'element-ui/lib/theme-chalk/base.css';
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+import "overlayscrollbars/css/OverlayScrollbars.css";
+import OverlayScrollbars from "overlayscrollbars";
+import { OverlayScrollbarsPlugin } from "overlayscrollbars-vue";
+import VueCropper from 'vue-cropper'
 
 import 'element-ui/lib/theme-chalk/index.css';
 import routes from './routes/index.js'
@@ -163,7 +167,7 @@ Vue.use(PageHeader);
 Vue.use(CascaderPanel);
 
 Vue.use(Loading.directive);
-
+Vue.use(VueCropper)
 Vue.prototype.$loading = Loading.service;
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
@@ -175,6 +179,8 @@ Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 
 
+Vue.use(OverlayScrollbarsPlugin);
+Vue.use(OverlayScrollbars);
 Vue.use(VueRouter)
 Vue.use(Vuex)
 const store = new Vuex.Store(stores);

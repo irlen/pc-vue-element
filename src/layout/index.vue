@@ -4,10 +4,14 @@
         <div class="header"></div>
         <div class="container" >
             <div class="left" :style="{height: windowH+'px'}">
-                <app-nav />
+                <overlay-scrollbars ref="osComponentRef" :style="{height: windowH+'px'}">
+                    <app-nav />
+                </overlay-scrollbars>
             </div>
             <div class="right" :style="{height: windowH+'px'}">
-
+                <overlay-scrollbars ref="osComponentRef" :style="{height: windowH+'px',padding: '20px'}">
+                    <router-view></router-view>
+                </overlay-scrollbars>
             </div>
         </div>
     </div>

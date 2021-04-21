@@ -44,7 +44,7 @@
             wyAxiosPost('/adminLogin',{...this.$data.userinfo},(res)=>{
               const token = res.data
               localStorage.setItem('token',token);
-              this.$router.push("/app");
+              this.$router.push({path:"/app/productManage"});
             })
           } else {
             console.log('error submit!!');

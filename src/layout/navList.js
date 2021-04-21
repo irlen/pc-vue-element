@@ -6,12 +6,12 @@ const navList = [
         children: [
             {
                 title: "商品管理",
-                path: "/product/manage",
-                index: "1-1"
+                path: "/app/productManage",
+                index: "/app/productManage"
             },{
                 title: "评论管理",
-                path: "/product/comment",
-                index: "1-2"
+                path: "/app/commentManage",
+                index: "/app/commentManage"
             }
         ]
     },{
@@ -21,8 +21,8 @@ const navList = [
         children: [
             {
                 title: "订单管理",
-                path: "/order/manage",
-                index: "2-1"
+                path: "/app/orderManage",
+                index: "/app/orderManage"
             }
             
         ]
